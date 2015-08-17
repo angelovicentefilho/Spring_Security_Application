@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Spring Security Application</title>
+    <title>Spring Security</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<c:url value="/pages/css/bootstrap.css" />" rel="stylesheet">
@@ -35,7 +35,7 @@
 
         <p class="lead">Welcome to Online Student Enrollment!</p>
         <p class="lead">To get started, you need to enter your details to enroll with
-        us. Or login to access your details, if you are already enrolled.</p>
+            us. Or login to access your details, if you are already enrolled.</p>
         <sec:authorize access="!isAuthenticated()">
             <p><a class="btn btn-lg btn-success" href="<c:url value="/login" />" role="button">Sign In</a></p>
         </sec:authorize>
