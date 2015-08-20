@@ -1,5 +1,5 @@
 # Spring Security Application
-Simple student login application...
+Simple user login application...
 # Project Environment:
 
 Java JDK 1.8
