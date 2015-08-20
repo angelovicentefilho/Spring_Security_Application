@@ -1,8 +1,8 @@
 package com.maxboguslavskyi.service.impl;
 
-import com.maxboguslavskyi.entity.Student;
+import com.maxboguslavskyi.entity.User;
 import com.maxboguslavskyi.entity.enums.UserRoleEnum;
-import com.maxboguslavskyi.service.StudentService;
+import com.maxboguslavskyi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -14,19 +14,19 @@ import org.springframework.stereotype.Service;
 import java.util.HashSet;
 import java.util.Set;
 
-@Service("studentDetailsService")
-public class StudentDetailsServiceImpl implements UserDetailsService {
+@Service("userDetailsService")
+public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
-    private StudentService studentService;
+    private UserService userService;
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Student student = studentService.getStudent("student");
+        User user = userService.getUser("user");
         Set<GrantedAuthority> roles = new HashSet<>();
         roles.add(new SimpleGrantedAuthority(UserRoleEnum.USER.name()));
 
-        return new org.springframework.security.core.userdetails.User(student.getLogin(), student.getPassword(), roles);
+        return new org.springframework.security.core.userdetails.User(user.getLogin(), user.getPassword(), roles);
     }
 
 }

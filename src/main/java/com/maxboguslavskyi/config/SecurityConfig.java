@@ -1,6 +1,6 @@
 package com.maxboguslavskyi.config;
 
-import com.maxboguslavskyi.service.impl.StudentDetailsServiceImpl;
+import com.maxboguslavskyi.service.impl.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,12 +17,12 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private StudentDetailsServiceImpl studentDetailsService;
+    private UserDetailsServiceImpl userDetailsService;
 
     @Autowired
     public void registerGlobalAuthentication(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
         authenticationManagerBuilder
-                .userDetailsService(studentDetailsService)
+                .userDetailsService(userDetailsService)
                 .passwordEncoder(getShaPasswordEncoder());
     }
 

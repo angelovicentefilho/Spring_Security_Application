@@ -24,9 +24,9 @@
 <div class="container">
 
     <div class="jumbotron" style="margin-top: 20px;">
-        <h1>Student.com</h1>
+        <h1>User.com</h1>
 
-        <p class="lead">Welcome to Online Student Demo!</p>
+        <p class="lead">Welcome to Online User Demo!</p>
 
         <p class="lead">Please, login to access your account.</p>
         <sec:authorize access="!isAuthenticated()">
@@ -41,7 +41,7 @@
     </div>
 
     <div class="footer">
-        <p>&copy; Student Demo 2015</p>
+        <p>&copy; User Demo 2015</p>
     </div>
 
 </div>

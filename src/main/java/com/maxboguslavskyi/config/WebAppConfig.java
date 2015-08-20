@@ -1,6 +1,6 @@
 package com.maxboguslavskyi.config;
 
-import com.maxboguslavskyi.service.impl.StudentDetailsServiceImpl;
+import com.maxboguslavskyi.service.impl.UserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +23,7 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
 
     @Bean
     public UserDetailsService getUserDetailsService() {
-        return new StudentDetailsServiceImpl();
+        return new UserDetailsServiceImpl();
     }
 
     @Bean
